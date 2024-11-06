@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<!-- Head Alanı -- AdminController/PartialHead -->
+@await Html.PartialAsync("/Views/Admin/PartialHead.cshtml")
+
+<body>
+    <!-- Sidenav -->
+    <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+        <div class="scrollbar-inner">
+            <!-- Brand -->
+            <div class="sidenav-header  align-items-center">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <img src="~/Admin/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                </a>
+            </div>
+            <!-- Sol Menü - SideBar -->
+            @await Html.PartialAsync("/Views/Admin/PartialSideBar.cshtml")
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+
+        <!-- Topnav -->
+        @await Html.PartialAsync("/Views/Admin/PartialNavBar.cshtml")
+
+        <!-- Header -->
+        @await Html.PartialAsync("/Views/Admin/PartialHeader.cshtml")
+
+        <!-- Page content -->
+        <div class="container-fluid mt--6">
+            <div class="row">
+                <div class="col">
+                    @RenderBody() <!-- Layouta bağlı olarak çalışacak sayfaların nereye geleceğini gösterir -->
+                </div>
+            </div>
+
+            <!-- Footer -->
+            @await Html.PartialAsync("/Views/Admin/PartialFooter.cshtml")
+
+        </div>
+    </div>
+    <!-- Admin Scripts -- AdminController/Scripts-->
+    @await Html.PartialAsync("/Views/Admin/PartialScript.cshtml")
+</body>
+</html>
+
