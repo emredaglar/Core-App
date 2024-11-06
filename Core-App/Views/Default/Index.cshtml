@@ -16,8 +16,8 @@
             @await Component.InvokeAsync("ServiceList")
             @await Component.InvokeAsync("SkillList")
             @await Component.InvokeAsync("PortfolioList")
-            @*  a            @await Component.InvokeAsync("ExperienceList")
-            @await Component.InvokeAsync("TestimonialList") *@
+            @await Component.InvokeAsync("ExperienceList")
+            @await Component.InvokeAsync("TestimonialList")
 
             <div class="section px-2 px-lg-4 pb-4 pt-5 mb-5" id="contact">
                 <div class="container-narrow">
@@ -28,9 +28,9 @@
 
                         @*@await Component.InvokeAsync("SendMessage")*@
 
-                        @*   a @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+                        @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
 
-                        @await Component.InvokeAsync("ContactDetails") *@
+                        @await Component.InvokeAsync("ContactDetail")
 
                     </div>
                 </div>

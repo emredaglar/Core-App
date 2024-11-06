@@ -11,9 +11,9 @@ namespace EntityLayer.Concrete
 	{
 		[Key]
 		public int TestimonialID { get; set; }
-        public int ClientName { get; set; }
-        public int Company { get; set; }
-        public int Comment { get; set; }
-        public int ImageUrl { get; set; }
+        public string ClientName { get; set; }
+        public string Company { get; set; }
+        public string Comment { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
