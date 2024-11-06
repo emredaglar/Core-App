@@ -15,8 +15,9 @@ namespace DataAccessLayer.Migrations
                 name: "Abouts",
                 columns: table => new
                 {
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    AboutID = table.Column<int>(type: "int", nullable: false),
+                    AboutID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -27,7 +28,7 @@ namespace DataAccessLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Abouts", x => x.Name);
+                    table.PrimaryKey("PK_Abouts", x => x.AboutID);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,10 +37,10 @@ namespace DataAccessLayer.Migrations
                 {
                     ContactID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<int>(type: "int", nullable: false),
-                    Mail = table.Column<int>(type: "int", nullable: false),
-                    Phone = table.Column<int>(type: "int", nullable: false)
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,7 +110,7 @@ namespace DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Skills",
+                name: "Services",
                 columns: table => new
                 {
                     ServiceID = table.Column<int>(type: "int", nullable: false)
@@ -119,7 +120,21 @@ namespace DataAccessLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Skills", x => x.ServiceID);
+                    table.PrimaryKey("PK_Services", x => x.ServiceID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Skills",
+                columns: table => new
+                {
+                    SkillID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Skills", x => x.SkillID);
                 });
 
             migrationBuilder.CreateTable(
@@ -175,6 +190,9 @@ namespace DataAccessLayer.Migrations
 
             migrationBuilder.DropTable(
                 name: "Portfolios");
+
+            migrationBuilder.DropTable(
+                name: "Services");
 
             migrationBuilder.DropTable(
                 name: "Skills");

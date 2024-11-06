@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
             _ServiceDal.Delete(t);
         }
 
-        public Service TGetById(int id)
+        public Service TGetByID(int id)
         {
             return _ServiceDal.GetById(id);
         }
