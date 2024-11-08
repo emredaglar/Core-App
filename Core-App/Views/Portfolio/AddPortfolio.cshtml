@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h4 style="margin-left:10px;">Proje Ekleme Sayfası</h4>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <form class="forms-sample" method="post" new {@ModelState.Clear()}>
+                <div class="form-group">
+                    <label>Proje Adı</label>
+                    
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @Type = "text" })
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @Type = "text" })
+                    @Html.ValidationMessageFor(x => x.Title)
+                </div>
+                <div class="form-group">
+                    <label>Resim</label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control",  @Type = "text" })
+                    @Html.ValidationMessageFor(x => x.ImageUrl)
+                </div>
+                <div class="form-group">
+                    <label>Proje Url</label>
+                    @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control", @Type = "text" })
+                    @Html.ValidationMessageFor(x => x.ProjectUrl)
+                    
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Yetenek Ekle</button>
+                <button class="btn btn-dark">Vazgeç</button>
+            </form>
+
+        </div>
+    </div>
+</div>

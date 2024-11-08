@@ -25,7 +25,7 @@ namespace Core_App.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult PartialHeader() // eğitimde NavigationPartial adını veriyor
+        public PartialViewResult PartialHeader() 
         {
             return PartialView();
         }
