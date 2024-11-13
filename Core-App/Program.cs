@@ -1,9 +1,13 @@
+using DataAccessLayer;
+using EntityLayer.Concrete;
 using FluentValidation.AspNetCore;
 using Microsoft.VisualStudio.Web.CodeGeneration.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

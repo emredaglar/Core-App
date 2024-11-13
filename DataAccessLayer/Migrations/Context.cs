@@ -1,5 +1,7 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-	public class Context:DbContext
-	{
+	public class Context: IdentityDbContext<WriterUser, WriterRole, int>
+    {
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			optionsBuilder.UseSqlServer("Server=DD\\SQLEXPRESS01;database=CoreAppDb;integrated security=true;TrustServerCertificate=True;");
@@ -29,5 +31,8 @@ namespace DataAccessLayer
 		public DbSet<Users> Users { get; set; }
 		public DbSet<UserMessage> UserMessages { get; set; }
 		public DbSet<ToDoList> toDoLists { get; set; }
-	}
+      
+
+
+    }
 }
