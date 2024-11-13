@@ -31,6 +31,7 @@ namespace DataAccessLayer
 		public DbSet<Users> Users { get; set; }
 		public DbSet<UserMessage> UserMessages { get; set; }
 		public DbSet<ToDoList> toDoLists { get; set; }
+		public DbSet<Announcement> Announcements { get; set; }
       
 
 

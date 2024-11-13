@@ -1,15 +1,21 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFreamwork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core_App.Areas.Writer.Controllers
 {
-    public class DefaultController : Controller
-    {
-        [Area("Writer")]
-        [Authorize]
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+	[Area("Writer")]
+	//[Authorize]
+	public class DefaultController : Controller
+	{
+		AnnouncementManager _announcementManager = new AnnouncementManager(new EfAnnouncementDal());
+
+		public IActionResult Index()
+		{
+			var values=_announcementManager.TGetList();
+			return View(values);
+		}
+	}
 }
