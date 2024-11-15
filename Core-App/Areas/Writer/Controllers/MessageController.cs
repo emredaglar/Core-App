@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_App.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    //[Route("Write/[controller]/[action]")]
     public class MessageController : Controller
     {
         WriterMessageMenager writerMessageMenager=new WriterMessageMenager(new EfWriterMessageDal());
@@ -68,8 +69,7 @@ namespace Core_App.Areas.Writer.Controllers
 				writerMessageMenager.TAdd(writerMessage);
 				return RedirectToAction("SenderMessage");
 			}
-			writerMessageMenager.TAdd(writerMessage);
-            return RedirectToAction("SenderMessage");
+            return View();
         }
     }
 }

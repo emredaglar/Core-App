@@ -28,7 +28,7 @@ namespace Core_App.Areas.Writer.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Index(UserEditViewModel p)
+        public async Task<IActionResult> ProfileIndex(UserEditViewModel p)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 

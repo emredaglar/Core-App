@@ -27,9 +27,9 @@ namespace Core_App.Areas.Writer.Controllers
             ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
             //Statistic
             Context c=new Context();
-			ViewBag.v1 = 1;
+			ViewBag.v1 = c.writerMessages.Where(x=>x.Receiver==values.Email).Count();
 			ViewBag.v2 = c.Announcements.Count();
-			ViewBag.v3 = 3;
+			ViewBag.v3 = c.Users.Count() ;
 			ViewBag.v4 = c.Skills.Count();
 			return View();
 		}
