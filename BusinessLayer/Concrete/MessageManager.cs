@@ -33,6 +33,8 @@ namespace BusinessLayer.Concrete
            return _messageDal.GetById(id);
         }
 
+        
+
         public List<Message> TGetList()
         {
            return _messageDal.GetAll();

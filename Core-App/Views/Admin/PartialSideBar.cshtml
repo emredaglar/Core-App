@@ -15,7 +15,7 @@
                     <div class="profile-name">
                         <h5 class="mb-0 font-weight-normal">Emre Dağlar</h5>
                         <span>.net Developer</span>
-                    </div>              
+                    </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                 <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
@@ -73,7 +73,7 @@
                 <span class="menu-title">Profil</span>
             </a>
         </li>
-       
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="/Skill/index">
                 <span class="menu-icon">
@@ -123,12 +123,26 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" data-toggle="collapse" href="#messages-menu" aria-expanded="false" aria-controls="messages-menu">
                 <span class="menu-icon">
                     <i class="mdi mdi-message-processing"></i>
                 </span>
                 <span class="menu-title">Mesajlar</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="messages-menu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminMessage/AdminMessageAdd/">Yeni Mesaj</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminMessage/ReceiverMessageList/">Gelen Mesajlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminMessage/SenderMessageList/">Giden Mesajlar</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="#">
