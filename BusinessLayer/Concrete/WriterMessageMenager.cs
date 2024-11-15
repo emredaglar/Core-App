@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Migrations;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,19 @@ namespace BusinessLayer.Concrete
             _writerMessageDal = writerMessageDal;
         }
 
+        public List<WriterMessage> GetListReceiverMessage(string p)
+        {
+            return _writerMessageDal.GetbyFilter(x => x.Receiver == p);
+        }
+
+        public List<WriterMessage> GetListSenderMessage(string p)
+        {
+            return _writerMessageDal.GetbyFilter(x => x.Sender == p);
+        }
+
         public void TAdd(WriterMessage t)
         {
-            throw new NotImplementedException();
+           _writerMessageDal.Insert(t);
         }
 
         public void TDelete(WriterMessage t)
@@ -30,13 +41,15 @@ namespace BusinessLayer.Concrete
 
         public WriterMessage TGetByID(int id)
         {
-            throw new NotImplementedException();
+           return _writerMessageDal.GetById(id);
         }
 
         public List<WriterMessage> TGetList()
         {
             return _writerMessageDal.GetAll();
         }
+
+        
 
         public void TUpdate(WriterMessage t)
         {

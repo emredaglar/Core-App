@@ -28,7 +28,7 @@ namespace DataAccessLayer
 		
 		public DbSet<SocailMedia> SocailMedias { get; set; }
 		public DbSet<Testimonial> Testimonials { get; set; }
-		public DbSet<Users> Users { get; set; }
+		//public DbSet<Users> Users { get; set; }
 		public DbSet<UserMessage> UserMessages { get; set; }
 		public DbSet<ToDoList> toDoLists { get; set; }
 		public DbSet<Announcement> Announcements { get; set; }
