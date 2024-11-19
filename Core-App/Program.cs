@@ -43,6 +43,7 @@ if (!app.Environment.IsDevelopment())
 
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404/");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
