@@ -26,7 +26,7 @@ namespace Core_App.ViewComponents.Dashboard
             var values = (from w in c.writerMessages
                           join a in c.Users
                           on w.SenderName equals a.Name + " " + a.Surname
-                          where w.Receiver == "admin@gmail.com"
+                          where w.Receiver == "a"
                           orderby w.WriterMessageID descending
                           select new UserImageMessageModel
                           {
