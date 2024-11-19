@@ -22,10 +22,13 @@ builder.Services.AddMvc(config =>
 builder.Services.AddMvc();
 //builder.Services.AddAuthentication(
 //	CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => { x.LoginPath = "/AdminLogin/Index/"; });
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
 	options.Cookie.HttpOnly = true;
 	options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+	options.AccessDeniedPath = "/ErrorPage/Index/";
+
 	options.LoginPath = "/Writer/Login/Index/";
 });
 
