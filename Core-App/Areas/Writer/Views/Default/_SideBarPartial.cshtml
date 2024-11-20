@@ -7,22 +7,30 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Writer/Message/ReceiverMessage/">
+            <a class="nav-link" data-toggle="collapse" href="#messages-menu" aria-expanded="false" aria-controls="messages-menu">
                 <i class="ti-notepad menu-icon"></i>
-                <span class="menu-title">Gelen Kutusu</span>
+                <span class="menu-title">Mesajlar</span>
+                <i class="menu-arrow"></i>
             </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/Writer/Message/SenderMessage/">
-                <i class="ti-agenda menu-icon"></i>
-                <span class="menu-title">Giden Kutusu</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/Writer/Message/AddMessage/">
-                <i class="ti-cloud menu-icon"></i>
-                <span class="menu-title">Yeni Mesaj</span>
-            </a>
+            <div class="collapse" id="messages-menu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Writer/Message/ReceiverMessage/">
+                            Gelen Kutusu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Writer/Message/SenderMessage/">
+                            Giden Kutusu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Writer/Message/AddMessage/">
+                            Yeni Mesaj
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="~/Writer/Default/Index/">
