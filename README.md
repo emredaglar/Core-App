@@ -1,5 +1,5 @@
 🚀 .Net Core Proje
-- Bu projede, ASP.NET Core 5.0 kullanarak dinamik bir web uygulaması geliştirdim. Proje, üç farklı panelden oluşmaktadır: Admin, Yazar ve Vitrin panelleri. Uygulama, modern yazılım geliştirme mimarileri ve tasarım desenlerini kullanarak geliştirildi.
+- Bu projede, ASP.NET Core kullanarak dinamik bir web uygulaması geliştirdim. Proje, üç farklı panelden oluşmaktadır: Admin, Yazar ve Vitrin panelleri. Uygulama, modern yazılım geliştirme mimarileri ve tasarım desenlerini kullanarak geliştirildi.
 
 ### ✨ Vitrin Paneli (Default Panel)
 - 🎓 Eğitim Hayatı ve Deneyimler vb. : Kullanıcılar, eğitim hayatınızı ve iş deneyimlerinizi detaylı bir şekilde görüntüleyebilir.
