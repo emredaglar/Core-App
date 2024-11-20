@@ -9,7 +9,7 @@ namespace Core_App.Controllers
     public class ExperienceAjaxController : Controller
     {
         ExperienceManager experienceManager = new ExperienceManager(new EfExperienceDal());
-        public IActionResult Index()
+        public IActionResult IndexAjax()
         {
 
             return View();

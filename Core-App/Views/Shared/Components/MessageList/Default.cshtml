@@ -21,7 +21,7 @@
                             <div class="flex-grow">
                                 <div class="d-flex d-md-block d-xl-flex justify-content-between">
                                     <h6 class="preview-subject">@item.User.Name</h6>
-                                    <p class="text-muted text-small">@item.Date</p>
+                                    <p class="text-muted text-small">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</p>
                                 </div>
                                 <p class="text-muted">@item.Content</p>
 
